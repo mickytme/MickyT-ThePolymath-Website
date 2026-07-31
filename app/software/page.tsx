@@ -115,7 +115,7 @@ export default function SoftwarePage() {
           </h1>
 
           <p className="mx-auto mt-8 max-w-3xl text-lg text-gray-400">
-            Applications and tools created by Micky the Polymath.
+            Applications and tools created by Micky T.
           </p>
 
         </div>
