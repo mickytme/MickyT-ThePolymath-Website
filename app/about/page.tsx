@@ -3,6 +3,7 @@ export default function AboutPage() {
     <main className="min-h-screen bg-black text-white">
 
       {/* Hero */}
+
       <section className="mx-auto max-w-6xl px-6 py-24 text-center">
 
         <p className="text-cyan-400 uppercase tracking-[0.3em]">
@@ -25,6 +26,7 @@ export default function AboutPage() {
         </p>
 
       </section>
+
 
       {/* Philosophy */}
 
@@ -53,6 +55,7 @@ export default function AboutPage() {
         </div>
 
       </section>
+
 
       {/* Disciplines */}
 
@@ -100,7 +103,10 @@ export default function AboutPage() {
               key={item.title}
               className="rounded-2xl border border-white/10 bg-white/5 p-8 transition hover:border-cyan-500 hover:bg-cyan-500/5"
             >
-              <div className="text-5xl">{item.icon}</div>
+
+              <div className="text-5xl">
+                {item.icon}
+              </div>
 
               <h3 className="mt-5 text-2xl font-semibold">
                 {item.title}
@@ -109,12 +115,14 @@ export default function AboutPage() {
               <p className="mt-4 text-gray-400">
                 {item.text}
               </p>
+
             </div>
           ))}
 
         </div>
 
       </section>
+
 
       {/* Mission */}
 
@@ -130,43 +138,6 @@ export default function AboutPage() {
           exploration. I aim to create tools that are both technically
           sophisticated and genuinely useful.
         </p>
-
-      </section>
-
-      {/* Current Projects */}
-
-      <section className="mx-auto max-w-6xl px-6 py-20">
-
-        <h2 className="mb-10 text-4xl font-bold">
-          Current Projects
-        </h2>
-
-        <div className="grid gap-6 md:grid-cols-2">
-
-          <div className="rounded-3xl border border-cyan-500/30 bg-cyan-500/10 p-8">
-            <h3 className="text-2xl font-bold">
-              Alchemist
-            </h3>
-
-            <p className="mt-4 text-gray-300">
-              A modern astrology platform that combines professional chart
-              calculations, elegant visualization, and intelligent analysis
-              across multiple platforms.
-            </p>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-            <h3 className="text-2xl font-bold">
-              The Polymath
-            </h3>
-
-            <p className="mt-4 text-gray-300">
-              An ongoing journey of research, writing, and software development
-              that connects knowledge from diverse fields into a unified vision.
-            </p>
-          </div>
-
-        </div>
 
       </section>
 
