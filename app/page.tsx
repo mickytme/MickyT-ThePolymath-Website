@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -33,13 +33,23 @@ export default function Home() {
 
         {/* Buttons */}
         <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-          <button className="rounded-xl bg-cyan-500 px-8 py-4 font-semibold text-black transition hover:scale-105 hover:bg-cyan-400">
-            Explore My Work
-          </button>
 
-          <button className="rounded-xl border border-gray-700 px-8 py-4 transition hover:border-cyan-500 hover:text-cyan-400">
+          {/* Explore My Work */}
+          <Link
+            href="/projects"
+            className="rounded-xl bg-cyan-500 px-8 py-4 font-semibold text-black transition hover:scale-105 hover:bg-cyan-400"
+          >
+            Explore My Work
+          </Link>
+
+          {/* About Me */}
+          <Link
+            href="/about"
+            className="rounded-xl border border-gray-700 px-8 py-4 transition hover:border-cyan-500 hover:text-cyan-400"
+          >
             About Me
-          </button>
+          </Link>
+
         </div>
 
         {/* Fields */}
