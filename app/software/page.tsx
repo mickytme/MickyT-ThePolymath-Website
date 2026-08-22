@@ -13,6 +13,10 @@ import {
 import { SiIos } from "react-icons/si";
 
 
+// ============================================================
+// Platform Icon
+// ============================================================
+
 function PlatformIcon({
   platform,
 }: {
@@ -40,13 +44,17 @@ function PlatformIcon({
 }
 
 
-export default function SoftwarePage() {
+// ============================================================
+// Software Page
+// ============================================================
 
+export default function SoftwarePage() {
   const software: Software[] = [
     {
       id: "alchemist",
       icon: "♈",
       name: "Alchemist",
+
       description:
         "A professional Western Astrology platform featuring high-precision chart calculations, beautiful chart rendering, AI-powered interpretation, and cross-platform support.",
 
@@ -64,6 +72,13 @@ export default function SoftwarePage() {
         "Swiss Ephemeris",
         "AI",
       ],
+
+      // ======================================================
+      // Keep ALL platforms here.
+      //
+      // Windows, macOS and iOS are temporarily hidden
+      // from the UI below.
+      // ======================================================
 
       platforms: [
         {
@@ -98,23 +113,26 @@ export default function SoftwarePage() {
     },
   ];
 
-
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-950 via-black to-slate-950 text-white">
 
+      {/* =====================================================
+          Hero
+      ====================================================== */}
+
       <section className="border-b border-white/10">
 
-        <div className="mx-auto max-w-7xl px-6 py-24 text-center">
+        <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-8 lg:py-24">
 
-          <p className="uppercase tracking-[0.4em] text-cyan-400">
+          <p className="text-sm uppercase tracking-[0.3em] text-cyan-400 sm:text-base sm:tracking-[0.4em]">
             Software Library
           </p>
 
-          <h1 className="mt-6 text-6xl font-black">
+          <h1 className="mt-5 text-4xl font-black sm:mt-6 sm:text-5xl lg:text-6xl">
             Software
           </h1>
 
-          <p className="mx-auto mt-8 max-w-3xl text-lg text-gray-400">
+          <p className="mx-auto mt-6 max-w-3xl text-base text-gray-400 sm:mt-8 sm:text-lg">
             Applications and tools created by Micky T.
           </p>
 
@@ -123,11 +141,15 @@ export default function SoftwarePage() {
       </section>
 
 
-      <section className="mx-auto max-w-7xl px-6 py-16">
+      {/* =====================================================
+          Software List
+      ====================================================== */}
 
-        <div className="space-y-10">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
 
-          {software.map((app)=>(
+        <div className="space-y-8 sm:space-y-10">
+
+          {software.map((app) => (
             <SoftwareCard
               key={app.id}
               app={app}
@@ -143,85 +165,122 @@ export default function SoftwarePage() {
 }
 
 
+// ============================================================
+// Software Card
+// ============================================================
 
 function SoftwareCard({
   app,
-}:{
-  app: Software
+}: {
+  app: Software;
 }) {
+  // ==========================================================
+  // TEMPORARY PLATFORM VISIBILITY
+  //
+  // Keep all platforms in app.platforms, but only show
+  // Android in the UI for now.
+  //
+  // Later, simply change this to:
+  //
+  // const visiblePlatforms = app.platforms;
+  //
+  // ==========================================================
+
+  const visiblePlatforms = app.platforms.filter(
+    (item) => item.name === "Android"
+  );
 
 
-  const [platform,setPlatform] =
-    useState(app.platforms[0]);
+  // ==========================================================
+  // Initial selected platform
+  // ==========================================================
+
+  const defaultPlatform =
+    visiblePlatforms.find(
+      (item) => item.name === "Android"
+    ) ?? visiblePlatforms[0];
+
+
+  const [platform, setPlatform] = useState(defaultPlatform);
 
 
   return (
+    <div className="rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-8 lg:p-10">
 
-    <div className="rounded-3xl border border-white/10 bg-white/5 p-10">
+      {/* =====================================================
+          Header
+      ====================================================== */}
 
+      <div className="flex flex-col gap-5 sm:flex-row sm:gap-6">
 
-      {/* Header */}
+        {/* App Icon */}
 
-      <div className="flex gap-6">
+        <div className="flex shrink-0 items-start">
 
-        <div className="text-6xl">
-          {app.icon}
+          <div className="text-5xl sm:text-6xl">
+            {app.icon}
+          </div>
+
         </div>
 
 
-        <div>
+        {/* App Information */}
 
-          <div className="flex items-center gap-4">
+        <div className="min-w-0 flex-1">
 
-            <h2 className="text-4xl font-bold">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+
+            <h2 className="text-3xl font-bold sm:text-4xl">
               {app.name}
             </h2>
 
-
-            <span className="rounded-full bg-green-500/20 px-4 py-1 text-green-300">
+            <span className="rounded-full bg-green-500/20 px-3 py-1 text-sm font-medium text-green-300 sm:px-4">
               {app.status}
             </span>
 
           </div>
 
 
-          <p className="mt-4 text-gray-400">
+          <p className="mt-4 text-sm leading-6 text-gray-400 sm:text-base sm:leading-7">
             {app.description}
           </p>
 
         </div>
 
-
       </div>
 
 
+      {/* =====================================================
+          Platform Selector
+      ====================================================== */}
 
-      {/* Platform Selector */}
+      <div className="mt-10 sm:mt-12">
 
-      <div className="mt-12">
-
-        <h3 className="mb-5 text-xl font-semibold">
+        <h3 className="mb-5 text-lg font-semibold sm:text-xl">
           Download For
         </h3>
 
 
-        <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-3 sm:max-w-xs sm:gap-5">
 
-
-          {app.platforms.map((item)=>(
+          {visiblePlatforms.map((item) => (
 
             <button
               key={item.name}
-              onClick={()=>setPlatform(item)}
+              type="button"
+              onClick={() => setPlatform(item)}
               className={`
-                flex flex-col items-center justify-center
-                rounded-2xl border p-6 transition
+                flex min-h-[120px]
+                flex-col items-center justify-center
+                rounded-2xl border
+                px-6 py-6
+                text-center
+                transition
+                sm:min-h-[140px]
                 ${
                   platform.name === item.name
-                  ?
-                  "border-cyan-400 bg-cyan-500/20 text-cyan-300"
-                  :
-                  "border-white/10 bg-black hover:border-cyan-500"
+                    ? "border-cyan-400 bg-cyan-500/20 text-cyan-300"
+                    : "border-white/10 bg-black hover:border-cyan-500"
                 }
               `}
             >
@@ -234,86 +293,104 @@ function SoftwareCard({
                 {item.name}
               </div>
 
-
             </button>
 
           ))}
-
 
         </div>
 
       </div>
 
 
+      {/* =====================================================
+          Download Information
+      ====================================================== */}
 
-      {/* Download Info */}
+      {platform && (
+        <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 md:grid-cols-4">
 
-      <div className="mt-10 grid gap-5 md:grid-cols-4">
+          {/* Version */}
 
-
-        <InfoCard
-          title="Version"
-          value={platform.version}
-        />
-
-
-        <InfoCard
-          title="Size"
-          value={platform.size}
-        />
+          <InfoCard
+            title="Version"
+            value={platform.version}
+          />
 
 
-        <InfoCard
-          title="Requirement"
-          value={platform.requirements}
-        />
+          {/* Size */}
+
+          <InfoCard
+            title="Size"
+            value={platform.size}
+          />
 
 
-        <a
-          href={platform.download}
-          className="
-            flex items-center justify-center
-            rounded-xl bg-cyan-500
-            font-bold text-black
-            transition hover:bg-cyan-400
-          "
-        >
-          Download {platform.name}
-        </a>
+          {/* Requirement */}
+
+          <InfoCard
+            title="Requirement"
+            value={platform.requirements}
+          />
 
 
-      </div>
+          {/* Download Button */}
 
+          <a
+            href={platform.download}
+            className="
+              flex min-h-[72px] w-full
+              items-center justify-center
+              rounded-xl
+              bg-cyan-500
+              px-5 py-4
+              text-center
+              text-sm font-bold
+              leading-5
+              text-black
+              transition
+              hover:bg-cyan-400
+              focus:outline-none
+              focus:ring-2
+              focus:ring-cyan-400
+              focus:ring-offset-2
+              focus:ring-offset-slate-950
+              sm:min-h-[100%]
+              sm:text-base
+            "
+          >
+            Download
+          </a>
+
+        </div>
+      )}
 
     </div>
-
   );
 }
 
 
+// ============================================================
+// Information Card
+// ============================================================
 
 function InfoCard({
- title,
- value
-}:{
- title:string;
- value:string;
-}){
+  title,
+  value,
+}: {
+  title: string;
+  value: string;
+}) {
+  return (
+    <div className="flex min-h-[72px] flex-col justify-center rounded-2xl border border-white/10 bg-black/30 p-4 sm:min-h-[100px] sm:p-5">
 
- return (
+      <p className="text-xs uppercase tracking-wide text-gray-500 sm:text-sm">
+        {title}
+      </p>
 
-  <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
+      <p className="mt-2 break-words text-sm font-semibold leading-5 sm:text-base">
+        {value}
+      </p>
 
-    <p className="text-sm uppercase text-gray-500">
-      {title}
-    </p>
-
-    <p className="mt-2 font-semibold">
-      {value}
-    </p>
-
-  </div>
-
- );
-
+    </div>
+  );
 }
