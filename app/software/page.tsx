@@ -12,7 +12,6 @@ import {
 
 import { SiIos } from "react-icons/si";
 
-
 // ============================================================
 // Platform Icon
 // ============================================================
@@ -42,7 +41,6 @@ function PlatformIcon({
       return null;
   }
 }
-
 
 // ============================================================
 // Software Page
@@ -107,7 +105,10 @@ export default function SoftwarePage() {
           version: "1.0.0",
           size: "24.8 MB",
           requirements: "Android 15+",
-          download: "#",
+
+          // APK file inside:
+          // public/downloads/alchemist-1.0.0.apk
+          download: "/downloads/alchemist-1.0.0.apk",
         },
       ],
     },
@@ -115,15 +116,12 @@ export default function SoftwarePage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-950 via-black to-slate-950 text-white">
-
       {/* =====================================================
           Hero
       ====================================================== */}
 
       <section className="border-b border-white/10">
-
         <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-
           <p className="text-sm uppercase tracking-[0.3em] text-cyan-400 sm:text-base sm:tracking-[0.4em]">
             Software Library
           </p>
@@ -135,35 +133,26 @@ export default function SoftwarePage() {
           <p className="mx-auto mt-6 max-w-3xl text-base text-gray-400 sm:mt-8 sm:text-lg">
             Applications and tools created by Micky T.
           </p>
-
         </div>
-
       </section>
-
 
       {/* =====================================================
           Software List
       ====================================================== */}
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
-
         <div className="space-y-8 sm:space-y-10">
-
           {software.map((app) => (
             <SoftwareCard
               key={app.id}
               app={app}
             />
           ))}
-
         </div>
-
       </section>
-
     </main>
   );
 }
-
 
 // ============================================================
 // Software Card
@@ -190,7 +179,6 @@ function SoftwareCard({
     (item) => item.name === "Android"
   );
 
-
   // ==========================================================
   // Initial selected platform
   // ==========================================================
@@ -200,36 +188,27 @@ function SoftwareCard({
       (item) => item.name === "Android"
     ) ?? visiblePlatforms[0];
 
-
   const [platform, setPlatform] = useState(defaultPlatform);
-
 
   return (
     <div className="rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-8 lg:p-10">
-
       {/* =====================================================
           Header
       ====================================================== */}
 
       <div className="flex flex-col gap-5 sm:flex-row sm:gap-6">
-
         {/* App Icon */}
 
         <div className="flex shrink-0 items-start">
-
           <div className="text-5xl sm:text-6xl">
             {app.icon}
           </div>
-
         </div>
-
 
         {/* App Information */}
 
         <div className="min-w-0 flex-1">
-
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-
             <h2 className="text-3xl font-bold sm:text-4xl">
               {app.name}
             </h2>
@@ -237,34 +216,25 @@ function SoftwareCard({
             <span className="rounded-full bg-green-500/20 px-3 py-1 text-sm font-medium text-green-300 sm:px-4">
               {app.status}
             </span>
-
           </div>
-
 
           <p className="mt-4 text-sm leading-6 text-gray-400 sm:text-base sm:leading-7">
             {app.description}
           </p>
-
         </div>
-
       </div>
-
 
       {/* =====================================================
           Platform Selector
       ====================================================== */}
 
       <div className="mt-10 sm:mt-12">
-
         <h3 className="mb-5 text-lg font-semibold sm:text-xl">
           Download For
         </h3>
 
-
         <div className="grid grid-cols-1 gap-3 sm:max-w-xs sm:gap-5">
-
           {visiblePlatforms.map((item) => (
-
             <button
               key={item.name}
               type="button"
@@ -278,29 +248,21 @@ function SoftwareCard({
                 transition
                 sm:min-h-[140px]
                 ${
-                  platform.name === item.name
+                  platform?.name === item.name
                     ? "border-cyan-400 bg-cyan-500/20 text-cyan-300"
                     : "border-white/10 bg-black hover:border-cyan-500"
                 }
               `}
             >
-
-              <PlatformIcon
-                platform={item.name}
-              />
+              <PlatformIcon platform={item.name} />
 
               <div className="mt-4 font-semibold">
                 {item.name}
               </div>
-
             </button>
-
           ))}
-
         </div>
-
       </div>
-
 
       {/* =====================================================
           Download Information
@@ -308,14 +270,12 @@ function SoftwareCard({
 
       {platform && (
         <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 md:grid-cols-4">
-
           {/* Version */}
 
           <InfoCard
             title="Version"
             value={platform.version}
           />
-
 
           {/* Size */}
 
@@ -324,7 +284,6 @@ function SoftwareCard({
             value={platform.size}
           />
 
-
           {/* Requirement */}
 
           <InfoCard
@@ -332,11 +291,11 @@ function SoftwareCard({
             value={platform.requirements}
           />
 
-
           {/* Download Button */}
 
           <a
             href={platform.download}
+            download
             className="
               flex min-h-[72px] w-full
               items-center justify-center
@@ -360,14 +319,11 @@ function SoftwareCard({
           >
             Download
           </a>
-
         </div>
       )}
-
     </div>
   );
 }
-
 
 // ============================================================
 // Information Card
@@ -382,7 +338,6 @@ function InfoCard({
 }) {
   return (
     <div className="flex min-h-[72px] flex-col justify-center rounded-2xl border border-white/10 bg-black/30 p-4 sm:min-h-[100px] sm:p-5">
-
       <p className="text-xs uppercase tracking-wide text-gray-500 sm:text-sm">
         {title}
       </p>
@@ -390,7 +345,6 @@ function InfoCard({
       <p className="mt-2 break-words text-sm font-semibold leading-5 sm:text-base">
         {value}
       </p>
-
     </div>
   );
 }
