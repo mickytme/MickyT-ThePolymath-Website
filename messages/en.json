@@ -1,0 +1,210 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "software": "Software",
+    "about": "About",
+    "contact": "Contact"
+  },
+
+  "Home": {
+    "role": "Software Engineer • Astrologer • Researcher • AI Developer",
+    "subtitle": "The Polymath",
+    "description": "I explore the intersection of science, technology, philosophy, and astrology to create meaningful software and discover new ways of understanding the universe.",
+    "exploreWork": "Explore My Work",
+    "aboutMe": "About Me",
+
+    "fields": {
+      "astrology": {
+        "title": "Astrology",
+        "description": "Building modern astrology software with Swiss Ephemeris and advanced chart analysis."
+      },
+
+      "software": {
+        "title": "Software",
+        "description": "Android, iOS, Web, AI and cross-platform application development."
+      },
+
+      "ai": {
+        "title": "Artificial Intelligence",
+        "description": "Exploring intelligent systems that augment creativity, knowledge, and decision making."
+      },
+
+      "research": {
+        "title": "Research",
+        "description": "Continuous learning across philosophy, psychology, mathematics, and the natural sciences."
+      }
+    }
+  },
+
+  "Software": {
+    "eyebrow": "Software Library",
+    "title": "Software",
+    "description": "Applications and tools created by Micky T.",
+    "stable": "Stable",
+    "downloadFor": "Download For",
+    "version": "Version",
+    "size": "Size",
+    "requirement": "Requirement",
+    "download": "Download",
+
+    "alchemist": {
+      "description": "A professional Western Astrology platform featuring high-precision chart calculations, beautiful chart rendering, AI-powered interpretation, and cross-platform support."
+    }
+  },
+
+  "Projects": {
+  "hero": {
+    "eyebrow": "Projects",
+    "title": "Things I'm Building.",
+    "description": "I'm building astrology applications across multiple platforms, combining traditional astrological systems with modern software and thoughtful user experiences."
+  },
+
+  "currentFocus": {
+    "badge": "Current Focus",
+    "eyebrow": "Current Focus",
+    "title": "Alchemist for Android",
+    "description": "My current focus is preparing the Android version of Alchemist for publication. The application is being refined, tested, and prepared for its first public release."
+  },
+
+  "list": {
+    "eyebrow": "What I'm Building",
+    "title": "Current Projects",
+    "description": "These projects explore different astrological traditions while bringing them into modern software experiences."
+  },
+
+  "labels": {
+    "platforms": "Platforms",
+    "highlights": "What I'm Working On",
+    "project": "Project"
+  },
+
+  "alchemist": {
+    "category": "Western Astrology",
+    "status": "Preparing for Release",
+    "description": "Alchemist is a modern Western astrology application designed to explore birth charts, planets, aspects, houses, and transits through a clean and intuitive interface.",
+
+    "platforms": {
+      "android": "Preparing for Release",
+      "ios": "In Development",
+      "macos": "In Development"
+    },
+
+    "highlights": {
+      "birthCharts": "Western astrology birth charts",
+      "planetHouseAnalysis": "Planet and house analysis",
+      "aspectCalculations": "Aspect calculations and orbs",
+      "transitAnalysis": "Transit analysis and forecasting",
+      "modernInterface": "Modern, clean interface"
+    }
+  },
+
+  "vedicSage": {
+    "category": "Vedic Astrology",
+    "status": "In Development",
+    "description": "VedicSage is my Vedic astrology project, focused on exploring traditional Vedic astrology calculations and presenting them through a modern digital experience.",
+
+    "platforms": {
+      "android": "In Development",
+      "ios": "In Development",
+      "macos": "In Development"
+    },
+
+    "highlights": {
+      "vedicCalculations": "Vedic astrology calculations",
+      "birthChartAnalysis": "Birth chart analysis",
+      "siderealAstrology": "Sidereal astrology",
+      "planetaryPositions": "Planetary positions",
+      "traditionalConcepts": "Traditional astrology concepts"
+    }
+  },
+
+  "closing": "These projects are continuously evolving as I experiment with astrology, software development, and new ways of presenting complex information through technology."
+},
+
+"About": {
+    "hero": {
+      "label": "About Me",
+      "title": "I'm Micky,",
+      "titleHighlight": "a Modern Polymath.",
+      "description": "I believe that innovation happens where different disciplines meet. My work combines software engineering, artificial intelligence, astrology, philosophy, mathematics, and lifelong learning to build tools that help people better understand themselves and the world."
+    },
+
+    "philosophy": {
+      "title": "My Philosophy",
+      "paragraph1": "Throughout history, great thinkers rarely confined themselves to a single field. Leonardo da Vinci united art and engineering. Isaac Newton explored physics, mathematics, and philosophy. Today's world increasingly rewards people who can connect ideas across disciplines rather than remain within one specialty.",
+      "paragraph2": "I strive to continue that tradition by integrating technology, science, and the humanities into practical software and meaningful research."
+    },
+
+    "areas": {
+      "title": "Areas of Expertise",
+
+      "software": {
+        "title": "Software Engineering",
+        "description": "Building applications across Android, Web, and modern frameworks."
+      },
+
+      "astrology": {
+        "title": "Astrology",
+        "description": "Developing professional astrology software powered by Swiss Ephemeris."
+      },
+
+      "ai": {
+        "title": "Artificial Intelligence",
+        "description": "Exploring AI systems that enhance creativity and knowledge."
+      },
+
+      "mathematics": {
+        "title": "Mathematics",
+        "description": "Applying mathematical thinking to algorithms and problem solving."
+      },
+
+      "research": {
+        "title": "Research",
+        "description": "Continuously studying science, psychology, and philosophy."
+      },
+
+      "innovation": {
+        "title": "Innovation",
+        "description": "Connecting ideas from multiple disciplines to create unique products."
+      }
+    },
+
+    "mission": {
+      "title": "My Mission",
+      "description": "To bridge science, technology, and human understanding through thoughtful software, interdisciplinary research, and continuous exploration. I aim to create tools that are both technically sophisticated and genuinely useful."
+    }
+  },
+
+  "Contact": {
+  "hero": {
+    "label": "Contact",
+    "title": "Let's Connect.",
+    "description": "Whether you want to discuss a project, ask a question, explore an idea, or simply say hello, I'd be happy to hear from you."
+  },
+
+  "methods": {
+    "email": {
+      "title": "Email",
+      "description": "For general questions, project discussions, collaborations, or other inquiries.",
+      "action": "Send me an email →"
+    },
+
+    "github": {
+      "title": "GitHub",
+      "description": "Explore my software projects, experiments, and open-source work.",
+      "value": "View GitHub",
+      "action": "Open →"
+    },
+
+    "social": {
+      "title": "Social",
+      "description": "Connect with me and follow what I'm building and exploring.",
+      "value": "Social profiles",
+      "action": "Open →"
+    }
+  },
+
+  "bottomMessage": "I'm always interested in interesting ideas, thoughtful conversations, and opportunities to build something meaningful."
+}
+}

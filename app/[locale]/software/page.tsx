@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
+
 import { Software } from "@/types/software";
 
 import {
@@ -47,14 +49,15 @@ function PlatformIcon({
 // ============================================================
 
 export default function SoftwarePage() {
+  const t = useTranslations("Software");
+
   const software: Software[] = [
     {
       id: "alchemist",
       icon: "♈",
       name: "Alchemist",
 
-      description:
-        "A professional Western Astrology platform featuring high-precision chart calculations, beautiful chart rendering, AI-powered interpretation, and cross-platform support.",
+      description: t("alchemist.description"),
 
       released: "July 31, 2026",
       status: "Stable",
@@ -106,7 +109,7 @@ export default function SoftwarePage() {
           size: "24.8 MB",
           requirements: "Android 15+",
 
-          // APK file inside:
+          // APK:
           // public/downloads/alchemist-1.0.0.apk
           download: "/downloads/alchemist-1.0.0.apk",
         },
@@ -123,15 +126,15 @@ export default function SoftwarePage() {
       <section className="border-b border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <p className="text-sm uppercase tracking-[0.3em] text-cyan-400 sm:text-base sm:tracking-[0.4em]">
-            Software Library
+            {t("eyebrow")}
           </p>
 
           <h1 className="mt-5 text-4xl font-black sm:mt-6 sm:text-5xl lg:text-6xl">
-            Software
+            {t("title")}
           </h1>
 
           <p className="mx-auto mt-6 max-w-3xl text-base text-gray-400 sm:mt-8 sm:text-lg">
-            Applications and tools created by Micky T.
+            {t("description")}
           </p>
         </div>
       </section>
@@ -163,13 +166,16 @@ function SoftwareCard({
 }: {
   app: Software;
 }) {
+  const t = useTranslations("Software");
+
   // ==========================================================
   // TEMPORARY PLATFORM VISIBILITY
   //
-  // Keep all platforms in app.platforms, but only show
-  // Android in the UI for now.
+  // Keep all platforms in app.platforms.
   //
-  // Later, simply change this to:
+  // Only Android is displayed for now.
+  //
+  // Later, change to:
   //
   // const visiblePlatforms = app.platforms;
   //
@@ -214,7 +220,7 @@ function SoftwareCard({
             </h2>
 
             <span className="rounded-full bg-green-500/20 px-3 py-1 text-sm font-medium text-green-300 sm:px-4">
-              {app.status}
+              {t("stable")}
             </span>
           </div>
 
@@ -230,7 +236,7 @@ function SoftwareCard({
 
       <div className="mt-10 sm:mt-12">
         <h3 className="mb-5 text-lg font-semibold sm:text-xl">
-          Download For
+          {t("downloadFor")}
         </h3>
 
         <div className="grid grid-cols-1 gap-3 sm:max-w-xs sm:gap-5">
@@ -273,21 +279,21 @@ function SoftwareCard({
           {/* Version */}
 
           <InfoCard
-            title="Version"
+            title={t("version")}
             value={platform.version}
           />
 
           {/* Size */}
 
           <InfoCard
-            title="Size"
+            title={t("size")}
             value={platform.size}
           />
 
           {/* Requirement */}
 
           <InfoCard
-            title="Requirement"
+            title={t("requirement")}
             value={platform.requirements}
           />
 
@@ -317,7 +323,7 @@ function SoftwareCard({
               sm:text-base
             "
           >
-            Download
+            {t("download")}
           </a>
         </div>
       )}

@@ -1,67 +1,78 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 export default function ProjectPage() {
+  const t = useTranslations("Projects");
+
   const projects = [
     {
       name: "Alchemist",
-      category: "Western Astrology",
-      status: "Preparing for Release",
-      description:
-        "Alchemist is a modern Western astrology application designed to explore birth charts, planets, aspects, houses, and transits through a clean and intuitive interface.",
+      category: t("alchemist.category"),
+      status: t("alchemist.status"),
+      description: t("alchemist.description"),
+
       platforms: [
         {
           name: "Android",
-          status: "Preparing for Release",
+          status: t("alchemist.platforms.android"),
           active: true,
         },
         {
           name: "iOS",
-          status: "In Development",
+          status: t("alchemist.platforms.ios"),
           active: false,
         },
         {
           name: "macOS",
-          status: "In Development",
+          status: t("alchemist.platforms.macos"),
           active: false,
         },
       ],
+
       highlights: [
-        "Western astrology birth charts",
-        "Planet and house analysis",
-        "Aspect calculations and orbs",
-        "Transit analysis and forecasting",
-        "Modern, clean interface",
+        t("alchemist.highlights.birthCharts"),
+        t("alchemist.highlights.planetHouseAnalysis"),
+        t("alchemist.highlights.aspectCalculations"),
+        t("alchemist.highlights.transitAnalysis"),
+        t("alchemist.highlights.modernInterface"),
       ],
+
       featured: true,
     },
+
     {
       name: "VedicSage",
-      category: "Vedic Astrology",
-      status: "In Development",
-      description:
-        "VedicSage is my Vedic astrology project, focused on exploring traditional Vedic astrology calculations and presenting them through a modern digital experience.",
+      category: t("vedicSage.category"),
+      status: t("vedicSage.status"),
+      description: t("vedicSage.description"),
+
       platforms: [
         {
           name: "Android",
-          status: "In Development",
+          status: t("vedicSage.platforms.android"),
           active: false,
         },
         {
           name: "iOS",
-          status: "In Development",
+          status: t("vedicSage.platforms.ios"),
           active: false,
         },
         {
           name: "macOS",
-          status: "In Development",
+          status: t("vedicSage.platforms.macos"),
           active: false,
         },
       ],
+
       highlights: [
-        "Vedic astrology calculations",
-        "Birth chart analysis",
-        "Sidereal astrology",
-        "Planetary positions",
-        "Traditional astrology concepts",
+        t("vedicSage.highlights.vedicCalculations"),
+        t("vedicSage.highlights.birthChartAnalysis"),
+        t("vedicSage.highlights.siderealAstrology"),
+        t("vedicSage.highlights.planetaryPositions"),
+        t("vedicSage.highlights.traditionalConcepts"),
       ],
+
       featured: false,
     },
   ];
@@ -76,17 +87,15 @@ export default function ProjectPage() {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <div className="mx-auto max-w-4xl text-center">
             <p className="text-sm uppercase tracking-[0.3em] text-cyan-400 sm:text-base sm:tracking-[0.4em]">
-              Projects
+              {t("hero.eyebrow")}
             </p>
 
             <h1 className="mt-5 text-4xl font-black tracking-tight sm:mt-6 sm:text-5xl lg:text-6xl">
-              Things I&apos;m Building.
+              {t("hero.title")}
             </h1>
 
             <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-gray-400 sm:mt-8 sm:text-lg sm:leading-8">
-              I&apos;m building astrology applications across multiple
-              platforms, combining traditional astrological systems with
-              modern software and thoughtful user experiences.
+              {t("hero.description")}
             </p>
           </div>
         </div>
@@ -99,22 +108,20 @@ export default function ProjectPage() {
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
         <div className="relative overflow-hidden rounded-3xl border border-cyan-500/30 bg-cyan-500/10 p-6 sm:p-8 lg:p-10">
           <div className="absolute right-6 top-6 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-cyan-300">
-            Current Focus
+            {t("currentFocus.badge")}
           </div>
 
           <div className="max-w-3xl pr-0 sm:pr-32">
             <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
-              Current Focus
+              {t("currentFocus.eyebrow")}
             </p>
 
             <h2 className="mt-4 text-3xl font-bold sm:text-4xl">
-              Alchemist for Android
+              {t("currentFocus.title")}
             </h2>
 
             <p className="mt-5 text-base leading-7 text-gray-300 sm:text-lg sm:leading-8">
-              My current focus is preparing the Android version of Alchemist
-              for publication. The application is being refined, tested, and
-              prepared for its first public release.
+              {t("currentFocus.description")}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
@@ -123,11 +130,11 @@ export default function ProjectPage() {
               </span>
 
               <span className="rounded-full bg-cyan-400/10 px-3 py-1.5 text-sm text-cyan-300">
-                Western Astrology
+                {t("alchemist.category")}
               </span>
 
               <span className="rounded-full bg-cyan-400/10 px-3 py-1.5 text-sm text-cyan-300">
-                Preparing for Release
+                {t("alchemist.status")}
               </span>
             </div>
           </div>
@@ -141,16 +148,15 @@ export default function ProjectPage() {
       <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 sm:pb-14 lg:px-8 lg:pb-16">
         <div className="mb-10 sm:mb-12">
           <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
-            What I&apos;m Building
+            {t("list.eyebrow")}
           </p>
 
           <h2 className="mt-4 text-3xl font-bold sm:text-4xl">
-            Current Projects
+            {t("list.title")}
           </h2>
 
           <p className="mt-4 max-w-3xl text-base leading-7 text-gray-400 sm:text-lg sm:leading-8">
-            These projects explore different astrological traditions while
-            bringing them into modern software experiences.
+            {t("list.description")}
           </p>
         </div>
 
@@ -186,7 +192,7 @@ export default function ProjectPage() {
 
                   {project.featured && (
                     <span className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-cyan-300">
-                      Current Focus
+                      {t("currentFocus.badge")}
                     </span>
                   )}
                 </div>
@@ -218,7 +224,7 @@ export default function ProjectPage() {
 
               <div className="mt-8 sm:mt-10">
                 <p className="text-sm font-semibold uppercase tracking-wider text-gray-500">
-                  Platforms
+                  {t("labels.platforms")}
                 </p>
 
                 <div className="mt-4 flex flex-wrap gap-2">
@@ -241,7 +247,7 @@ export default function ProjectPage() {
 
               <div className="mt-8 sm:mt-10">
                 <p className="text-sm font-semibold uppercase tracking-wider text-gray-500">
-                  What I&apos;m Working On
+                  {t("labels.highlights")}
                 </p>
 
                 <div className="mt-5 grid gap-3 sm:grid-cols-2">
@@ -276,7 +282,8 @@ export default function ProjectPage() {
                 }`}
               >
                 <p className="text-sm leading-6 text-gray-500">
-                  Project {String(index + 1).padStart(2, "0")}
+                  {t("labels.project")}{" "}
+                  {String(index + 1).padStart(2, "0")}
                 </p>
               </div>
             </article>
@@ -291,9 +298,7 @@ export default function ProjectPage() {
       <section className="border-t border-white/10">
         <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-8">
           <p className="text-base leading-7 text-gray-400 sm:text-lg sm:leading-8">
-            These projects are continuously evolving as I experiment with
-            astrology, software development, and new ways of presenting
-            complex information through technology.
+            {t("closing")}
           </p>
         </div>
       </section>
