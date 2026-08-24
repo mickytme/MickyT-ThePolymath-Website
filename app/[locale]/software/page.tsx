@@ -106,7 +106,7 @@ export default function SoftwarePage() {
         {
           name: "Android",
           version: "1.0.0",
-          size: "24.8 MB",
+          size: "411 MB",
           requirements: "Android 15+",
 
           // APK:
