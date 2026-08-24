@@ -39,7 +39,7 @@ export default function Navbar() {
             shrink-0
             text-lg
             font-bold
-            text-white
+            text-black
             transition-colors
             hover:text-cyan-400
             sm:text-xl
