@@ -37,7 +37,7 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="relative flex items-center">
+    <div className="relative flex shrink-0 items-center">
       <label
         htmlFor="language-switcher"
         className="sr-only"
@@ -54,7 +54,7 @@ export default function LanguageSwitcher() {
           appearance-none
           bg-transparent
           py-1
-          pr-8
+          pr-6
           text-sm
           font-medium
           text-gray-400
@@ -62,6 +62,7 @@ export default function LanguageSwitcher() {
           transition-colors
           hover:text-cyan-400
           focus:text-cyan-400
+          sm:pr-8
           sm:text-base
         "
         aria-label="Select language"
@@ -77,7 +78,7 @@ export default function LanguageSwitcher() {
         ))}
       </select>
 
-      {/* PNG language icon */}
+      {/* Language icon */}
       <div
         className="
           pointer-events-none
@@ -92,9 +93,15 @@ export default function LanguageSwitcher() {
         <Image
           src={currentLanguage.icon}
           alt=""
-          width={20}
-          height={20}
-          className="h-5 w-5 object-contain"
+          width={18}
+          height={18}
+          className="
+            h-4
+            w-4
+            object-contain
+            sm:h-5
+            sm:w-5
+          "
           aria-hidden="true"
         />
       </div>
