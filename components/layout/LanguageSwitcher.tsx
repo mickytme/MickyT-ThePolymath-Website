@@ -45,7 +45,6 @@ export default function LanguageSwitcher() {
         Select language
       </label>
 
-      {/* Language selector */}
       <select
         id="language-switcher"
         value={locale}
@@ -58,7 +57,7 @@ export default function LanguageSwitcher() {
           pr-8
           text-sm
           font-medium
-          text-gray-300
+          text-gray-400
           outline-none
           transition-colors
           hover:text-cyan-400
