@@ -111,7 +111,7 @@ export default function SoftwarePage() {
 
           // APK:
           // public/downloads/alchemist-1.0.0.apk
-          download: "/downloads/alchemist-1.0.0.apk",
+          download: "https://github.com/mickytme/MickyT-ThePolymath-Website/releases/download/v1.0.0/alchemist-1.0.0.apk",
         },
       ],
     },
